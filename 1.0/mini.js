@@ -12,8 +12,14 @@ KISSY.add(function (S, Node, Lang) {
      * @constructor
      */
     function Gotop(config) {
+        if(!config.trigger) {
+            S.error('未指定元素');
+        }
         var self = this;
-        self.config = config;
+        self.config = S.mix({
+            trigger: '',
+            useAnim: false
+        }, config);
         self._init();
     }
 
@@ -26,8 +32,11 @@ KISSY.add(function (S, Node, Lang) {
             var self = this;
             var config = self.config;
             var trigger = $(config.trigger);
+            if(!trigger.length) {
+                S.error('元素不存在');
+            }
             trigger.on('click', function() {
-                alert('1');
+                window.scrollTo(0, 1);
             })
         }
     });
