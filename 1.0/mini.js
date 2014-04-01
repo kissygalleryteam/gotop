@@ -24,11 +24,11 @@ KISSY.add(function (S, Node, Lang) {
             afterScroll: null
         };
         self.config = S.mix(defaultConfig, config);
-        self._init();
+        self.init();
     }
 
     S.augment(Gotop, EventTarget, /** @lends Gotop.prototype*/{
-        _init: function() {
+        init: function() {
             var self = this;
             self._bindEvent();
             self._bindScroll();
@@ -67,7 +67,7 @@ KISSY.add(function (S, Node, Lang) {
                 trigger.hide();
             }
         },
-        _destroy: function() {
+        destroy: function() {
             var self = this;
             var config = self.config;
             var trigger = $(config.trigger);
