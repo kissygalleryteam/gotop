@@ -41,9 +41,9 @@
 
         S.use('gallery/gotop/1.0/mini', function (S, Gotop) {
             var $ = S.all;
-            for(var i = 0, html = []; i < 60; i++) {html.push('<li>第 ' + i + ' 行</li>');}
+            for(var i = 0, html = []; i < 100; i++) {html.push('<li>第 ' + i + ' 行</li>');}
             $('#list').html(html.join(''));
-            window.gotop = new Gotop({
+            var gotop = new Gotop({
                 trigger: '#gotop'
             });
         });
