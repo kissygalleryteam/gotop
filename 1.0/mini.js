@@ -19,7 +19,7 @@ KISSY.add(function (S, Node, Lang) {
         var self = this;
         var defaultConfig = {
             trigger: '',
-            offset: 500,
+            offset: 50,
             useAnim: false,
             afterScroll: null
         };
@@ -50,7 +50,10 @@ KISSY.add(function (S, Node, Lang) {
         },
         _bindScroll: function() {
             var self = this;
-            $(win).on('scroll', self._update);
+            self.scrollEvent = function() {
+                self._update.call(self, null);
+            };
+            $(win).on('scroll', self.scrollEvent);
         },
         _update: function() {
             var self = this;
@@ -69,7 +72,7 @@ KISSY.add(function (S, Node, Lang) {
             var config = self.config;
             var trigger = $(config.trigger);
             trigger.detach('click');
-            win.detach('scroll', self._update);
+            $(win).detach('scroll', self.scrollEvent);
         }
     });
 
