@@ -5,7 +5,6 @@
  **/
 KISSY.add(function(S, Node, Lang, Anim) {
     var $ = Node.all;
-    var EventTarget = S.Event.Target;
     var win = window;
     /**
      *
@@ -30,7 +29,7 @@ KISSY.add(function(S, Node, Lang, Anim) {
         self.init();
     }
 
-    S.augment(Gotop, EventTarget, /** @lends Gotop.prototype*/ {
+    S.augment(Gotop, /** @lends Gotop.prototype*/ {
         /**
          * 初始化组件
          * @return
