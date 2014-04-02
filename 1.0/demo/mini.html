@@ -4,9 +4,7 @@
     <meta charset="utf-8"/>
     <title>Gotop的demo</title>
     <script src="http://g.tbcdn.cn/kissy/m/0.2.0/mini-full.js" charset="utf-8"></script>
-</head>
-<body>
-<style type="text/css">
+    <style type="text/css">
     #gotop {
         display: none;
         position: fixed;
@@ -15,12 +13,14 @@
         padding: 10px;
         border: 1px solid #ccc;
     }
-</style>
-<h2>Gotop的demo</h2>
-<a href="http://m.kissyui.com/" target="_blank">KISSY MINI官方文档</a>
-<ul id="list"></ul>
-<div id="gotop">回到顶部</div>
-<script>
+    </style>
+</head>
+<body>
+    <h2>Gotop的demo</h2>
+    <a href="http://m.kissyui.com/" target="_blank">KISSY MINI官方文档</a>
+    <ul id="list"></ul>
+    <div id="gotop">回到顶部</div>
+    <script>
     (function(S) {
         var debug = ~location.search.indexOf('ks-debug');
 
@@ -41,13 +41,15 @@
 
         S.use('gallery/gotop/1.0/mini', function (S, Gotop) {
             var $ = S.all;
-            for(var i = 0, html = []; i < 100; i++) {html.push('<li>第 ' + i + ' 行</li>');}
+            for(var i = 0, html = []; i < 100; i++) {
+                html.push('<li>第 ' + i + ' 行</li>');
+            }
             $('#list').html(html.join(''));
             var gotop = new Gotop({
                 trigger: '#gotop'
             });
         });
     })(KISSY);
-</script>
+    </script>
 </body>
 </html>
