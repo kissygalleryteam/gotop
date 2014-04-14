@@ -19,7 +19,7 @@ Gotop是一个简单的基于KISSY MINI的回到顶部组件。
 * Class: Gotop
     * trigger[String]: 触发元素（必选）
     * offset[Number]: 屏幕滚动多少距离后显示元素，默认50
-    * useAnim[Boolean]: 是否动画滚动，默认false
+    * useAnim[Boolean]: 是否动画滚动，默认false（mini版还不支持动画）
     * easing[String]: 动画效果，默认'easeBoth'
     * duration[Number]: 动画时长，默认1
     * afterScroll[Function]: 回调函数，默认无
